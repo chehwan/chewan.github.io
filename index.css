@@ -1,0 +1,9 @@
+body {
+    margin: 0;          /* 기본 여백 제거 */
+    overflow: hidden;    /* 스크롤 막기 */
+    user-select: none;   /* 텍스트 선택 막기 */
+    touch-action: none;  /* 모바일 터치 스크롤 막기 */
+}
+canvas {
+    display: block;      /* 캔버스 주위 여백 제거 */
+}
