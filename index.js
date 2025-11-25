@@ -18,15 +18,15 @@ const game = new Phaser.Game(config);
 
 
 function preload() {
-    this.load.image("bot", "entrybot.png");
+    this.load.image("pigeon", "pigeon.png");
 }
 // x좌표, y좌표
 function create() {
-    this.bot2 = this.add.image(this.scale.width / 2,  this.scale.height / 2, "bot").setOrigin(0.5, 0.5);
-    this.bot2.setScale(0.6)
-    this.bot = this.add.image(this.scale.width / 2 +100,this.scale.height / 2,"bot");
+    this.pigeon2 = this.add.image(this.scale.width / 2,  this.scale.height / 2, "pigeon").setOrigin(0.5, 0.5);
+    this.pigeon2.setScale(0.2)
+    this.pigeon = this.add.image(this.scale.width / 2 +100,this.scale.height / 2,"pigeon");
     
-    this.bot.setScale(0.3);
+    this.pigeon.setScale(0.1);
     this.keys = this.input.keyboard.addKeys({
         up: "W",
         down: "S",
@@ -40,20 +40,20 @@ function create() {
 function update() {
     let speed = 5;
     let angleSpeed = 1;
-    let botSize = 0.3;
-    let bot2Size = 0.6;
+    let  pigeonSize = 0.3;
+    let pigeon2Size = 0.6;
    if (this.keys.right.isDown) {
-        this.bot.x += speed;
+        this.pigeon.x += speed;
     }
     if (this.keys.left.isDown) {
-        this.bot.x -= speed;
+        this.pigeon.x -= speed;
     }
     if (this.keys.up.isDown) {
-        this.bot.y -= speed;
+        this.pigeon.y -= speed;
     }
    if (this.keys.down.isDown) {
-        this.bot.y += speed;
+        this.pigeon.y += speed;
     }
-    this.bot.angle += angleSpeed / (botSize / bot2Size);
-    this.bot2.angle -= angleSpeed
+    this.pigeon.angle += angleSpeed / (pigeonSize / pigeon2Size);
+    this.pigeon2.angle -= angleSpeed
 }
